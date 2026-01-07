@@ -64,6 +64,7 @@ const Footer = () => {
                 <motion.a
                   key={idx}
                   href={Icon.link || "#"}
+                  target="__blank"
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors"
                 >
