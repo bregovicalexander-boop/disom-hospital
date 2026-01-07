@@ -30,14 +30,14 @@ const GALLERY_DATA = [
   {
     id: 4,
     title: "Urban View",
-    url: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=800",
+    url: "/equip.jpg",
     category: "Landscape",
     aspect: "aspect-video",
   },
   {
     id: 5,
     title: "Texture Study",
-    url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800",
+    url: "/patient.jpg",
     category: "Abstract",
     aspect: "aspect-[4/5]",
   },
