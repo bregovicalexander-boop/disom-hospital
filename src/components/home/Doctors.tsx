@@ -17,6 +17,8 @@ const doctors = [
   //   image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80",
   // },
   // {
+
+  // {
   //   name: "Dr. Priya Sharma",
   //   specialty: "Fertility Specialist",
   //   experience: "10+ years",
@@ -66,7 +68,7 @@ const Doctors = () => {
           </p>
         </motion.div>
 
-        {/* Doctors Grid */}
+        {/* Doctors Grid **/}
         <motion.div
           variants={containerVariants}
           initial="hidden"
