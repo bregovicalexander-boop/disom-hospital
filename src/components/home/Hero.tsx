@@ -164,7 +164,7 @@ const Hero = () => {
                 </div>
               </motion.div>
 
-              {/* Background Decorations */}
+              {/* Background Deco */}
               <div className="absolute -z-10 top-10 -right-10 w-full h-full rounded-3xl bg-primary/10" />
             </div>
           </motion.div>
