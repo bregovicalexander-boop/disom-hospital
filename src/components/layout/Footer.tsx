@@ -86,8 +86,8 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               {[
-                "About Us",
-                "Our Services",
+                "About",
+                "Services",
                 "Meet Our Doctors",
                 "Book Appointment",
                 "Gallery",
@@ -95,7 +95,7 @@ const Footer = () => {
               ].map((item) => (
                 <li key={item}>
                   <Link
-                    to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    to={`/${item === "Meet Our Doctors" ? "doctors" : item.toLowerCase().replace(/\s+/g, "-")}`}
                     className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-all flex items-center gap-2"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-primary" />

@@ -2,62 +2,106 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { ArrowRight, Heart, Baby, Stethoscope, Scan, Users, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  Heart,
+  Baby,
+  Stethoscope,
+  Scan,
+  Users,
+  Sparkles,
+} from "lucide-react";
 
 const services = [
   {
     icon: Heart,
     title: "Gynecology",
-    description: "Comprehensive women's health services including menstrual care, screenings, and treatments for conditions affecting the female reproductive system.",
-    features: ["Annual wellness exams", "Menstrual disorder treatment", "PCOS management", "Minimally invasive surgery"],
+    description:
+      "Comprehensive women's health services including menstrual care, screenings, and treatments for conditions affecting the female reproductive system.",
+    features: [
+      "Annual wellness exams",
+      "Menstrual disorder treatment",
+      "PCOS management",
+      "Minimally invasive surgery",
+    ],
     color: "bg-pink-50",
     iconColor: "text-pink-500",
-    link: "/services/gynecology",
+    link: "https://web.facebook.com/disom.hospital/",
   },
   {
     icon: Baby,
     title: "Obstetrics",
-    description: "Expert prenatal, delivery, and postnatal care ensuring a safe and healthy pregnancy journey for both mother and baby.",
-    features: ["Prenatal care", "High-risk pregnancy", "Natural & C-section delivery", "Postnatal support"],
+    description:
+      "Expert prenatal, delivery, and postnatal care ensuring a safe and healthy pregnancy journey for both mother and baby.",
+    features: [
+      "Prenatal care",
+      "High-risk pregnancy",
+      "Natural & C-section delivery",
+      "Postnatal support",
+    ],
     color: "bg-sky-light",
     iconColor: "text-sky",
-    link: "/services/obstetrics",
+    link: "https://web.facebook.com/disom.hospital/",
   },
   {
     icon: Sparkles,
     title: "Fertility Care",
-    description: "Personalized fertility treatments and reproductive health support with compassion and cutting-edge technology.",
-    features: ["Fertility assessments", "IVF & IUI treatments", "Egg freezing", "Counseling support"],
+    description:
+      "Personalized fertility treatments and reproductive health support with compassion and cutting-edge technology.",
+    features: [
+      "Fertility assessments",
+      "IVF & IUI treatments",
+      "Egg freezing",
+      "Counseling support",
+    ],
     color: "bg-purple-50",
     iconColor: "text-purple-500",
-    link: "/services/fertility",
+    link: "https://web.facebook.com/disom.hospital/",
   },
   {
     icon: Stethoscope,
     title: "Pediatrics",
-    description: "Child-focused healthcare from newborns to adolescents with gentle expertise and family-centered approach.",
-    features: ["Newborn care", "Vaccinations", "Growth monitoring", "Behavioral health"],
+    description:
+      "Child-focused healthcare from newborns to adolescents with gentle expertise and family-centered approach.",
+    features: [
+      "Newborn care",
+      "Vaccinations",
+      "Growth monitoring",
+      "Behavioral health",
+    ],
     color: "bg-amber-50",
     iconColor: "text-amber-500",
-    link: "/services/pediatrics",
+    link: "https://web.facebook.com/disom.hospital/",
   },
   {
     icon: Users,
     title: "Family Medicine",
-    description: "Whole-family healthcare covering preventive care, chronic disease management, and general wellness.",
-    features: ["Preventive screenings", "Chronic disease care", "Minor procedures", "Health education"],
+    description:
+      "Whole-family healthcare covering preventive care, chronic disease management, and general wellness.",
+    features: [
+      "Preventive screenings",
+      "Chronic disease care",
+      "Minor procedures",
+      "Health education",
+    ],
     color: "bg-mint",
     iconColor: "text-primary",
-    link: "/services/family-medicine",
+    link: "https://web.facebook.com/disom.hospital/",
   },
   {
     icon: Scan,
     title: "Ultrasound Services",
-    description: "Advanced diagnostic imaging with state-of-the-art 3D/4D ultrasound technology for accurate diagnoses.",
-    features: ["Pregnancy ultrasound", "3D/4D imaging", "Pelvic ultrasound", "Abdominal scans"],
+    description:
+      "Advanced diagnostic imaging with state-of-the-art 3D/4D ultrasound technology for accurate diagnoses.",
+    features: [
+      "Pregnancy ultrasound",
+      "3D/4D imaging",
+      "Pelvic ultrasound",
+      "Abdominal scans",
+    ],
     color: "bg-coral/10",
     iconColor: "text-coral",
-    link: "/services/ultrasound",
+    link: "https://web.facebook.com/disom.hospital/",
   },
 ];
 
@@ -65,7 +109,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-32 pb-20 bg-gradient-hero relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
@@ -85,8 +129,9 @@ const ServicesPage = () => {
               <span className="text-gradient">Every Need</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              From women's health to pediatrics, from fertility to family care — we offer a complete 
-              range of medical services designed around your family's unique needs.
+              From women's health to pediatrics, from fertility to family care —
+              we offer a complete range of medical services designed around your
+              family's unique needs.
             </p>
           </motion.div>
         </div>
@@ -110,7 +155,9 @@ const ServicesPage = () => {
                     <div
                       className={`shrink-0 w-16 h-16 rounded-xl ${service.color} flex items-center justify-center group-hover:scale-110 transition-transform`}
                     >
-                      <service.icon className={`w-8 h-8 ${service.iconColor}`} />
+                      <service.icon
+                        className={`w-8 h-8 ${service.iconColor}`}
+                      />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-display font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
@@ -121,7 +168,10 @@ const ServicesPage = () => {
                       </p>
                       <ul className="grid grid-cols-2 gap-2 mb-4">
                         {service.features.map((feature, fIdx) => (
-                          <li key={fIdx} className="flex items-center gap-2 text-sm text-foreground">
+                          <li
+                            key={fIdx}
+                            className="flex items-center gap-2 text-sm text-foreground"
+                          >
                             <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                             {feature}
                           </li>
@@ -129,6 +179,7 @@ const ServicesPage = () => {
                       </ul>
                       <Link
                         to={service.link}
+                        target="_blank"
                         className="inline-flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all"
                       >
                         Learn More

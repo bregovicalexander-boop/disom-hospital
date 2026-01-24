@@ -59,7 +59,7 @@ const Hero = () => {
                   className="gap-2 bg-gradient-primary hover:opacity-90 shadow-elevated text-base px-8"
                   asChild
                 >
-                  <Link to="/appointment">
+                  <Link to="/book-appointment">
                     <Calendar className="w-5 h-5" />
                     Book Appointment
                     <ArrowRight className="w-4 h-4 ml-1" />

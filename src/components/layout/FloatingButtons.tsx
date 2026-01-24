@@ -6,7 +6,7 @@ const FloatingButtons = () => {
   const location = useLocation();
 
   // Don't show on appointment page
-  if (location.pathname === "/appointment") return null;
+  if (location.pathname === "/book-appointment") return null;
 
   return (
     <AnimatePresence>
@@ -42,7 +42,7 @@ const FloatingButtons = () => {
         {/* Book Appointment */}
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
-            to="/appointment"
+            to="/book-appointment"
             className="flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-primary text-primary-foreground font-medium shadow-elevated hover:shadow-glow transition-all"
           >
             <Calendar className="w-5 h-5" />

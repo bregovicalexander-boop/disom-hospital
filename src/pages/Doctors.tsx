@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Linkedin, Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const doctors = [
   {
@@ -160,10 +161,13 @@ const DoctorsPage = () => {
                       {doctor.bio}
                     </p>
 
-                    <button className="mt-4 w-full py-2.5 rounded-lg bg-accent text-accent-foreground text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center gap-2">
+                    <Link
+                      to={"/book-appointment"}
+                      className="mt-4 w-full py-2.5 rounded-lg bg-accent text-accent-foreground text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center gap-2"
+                    >
                       <Phone className="w-4 h-4" />
                       Book Appointment
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
