@@ -106,7 +106,7 @@ const Navbar = () => {
               className="gap-2 bg-gradient-primary hover:opacity-90 shadow-soft"
               asChild
             >
-              <Link to="/appointment">
+              <Link to="/book-appointment">
                 <Calendar className="w-4 h-4" />
                 Book Appointment
               </Link>
@@ -167,7 +167,7 @@ const Navbar = () => {
                   className="gap-2 bg-gradient-primary shadow-soft"
                   asChild
                 >
-                  <Link to="/appointment">
+                  <Link to="/book-appointment">
                     <Calendar className="w-4 h-4" />
                     Book Appointment
                   </Link>
