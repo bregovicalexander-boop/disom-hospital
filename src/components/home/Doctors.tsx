@@ -1,35 +1,31 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Linkedin, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const doctors = [
-  {
-    name: "Dr. P.U. Agu",
-    specialty: "Gynecologist & Obstetrician",
-    experience: "15+ years",
-    image: "/dragu.png",
-  },
-  // {
-  //   name: "Dr. James Williams",
-  //   specialty: "Pediatrician",
-  //   experience: "12+ years",
-  //   image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80",
-  // },
-  // {
+const chiefDoctor = {
+  name: "Dr. P.U. Agu",
+  specialty: "Gynecologist & Obstetrician",
+  experience: "15+ years",
+  image: "/dragu.png",
+};
 
-  // {
-  //   name: "Dr. Priya Sharma",
-  //   specialty: "Fertility Specialist",
-  //   experience: "10+ years",
-  //   image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80",
-  // },
-  // {
-  //   name: "Dr. Michael Brown",
-  //   specialty: "Family Medicine",
-  //   experience: "18+ years",
-  //   image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80",
-  // },
+const otherDoctors = [
+  {
+    name: "Dr. Ndukwe Obeta",
+    specialty: "Pediatrician",
+    experience: "6+ years",
+  },
+  {
+    name: "Dr. Miracle Okafor",
+    specialty: "Fertility Specialist",
+    experience: "3+ years",
+  },
+  {
+    name: "Dr. Michael Nwafor",
+    specialty: "Family Medicine",
+    experience: "8+ years",
+  },
 ];
 
 const containerVariants = {
@@ -63,61 +59,84 @@ const Doctors = () => {
             Meet Our <span className="text-gradient">Expert Doctors</span>
           </h2>
           <p className="text-muted-foreground">
-            Our team of board-certified specialists brings decades of combined
-            experience and a shared commitment to exceptional patient care.
+            Our team of specialists brings decades of combined experience and a
+            shared commitment to exceptional patient care.
           </p>
         </motion.div>
 
-        {/* Doctors Grid **/}
+        {/* ===================== */}
+        {/* CHIEF DOCTOR SECTION  */}
+        {/* ===================== */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+          className="mb-20"
+        >
+          <motion.div
+            variants={itemVariants}
+            className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-card bg-card"
+          >
+            <div className="grid md:grid-cols-2">
+              {/* Image */}
+              <div className="h-96 md:h-full">
+                <img
+                  src={chiefDoctor.image}
+                  alt={chiefDoctor.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Info */}
+              <div className="p-10 flex flex-col justify-center">
+                <span className="inline-block w-fit px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
+                  Chief Doctor
+                </span>
+
+                <h3 className="text-3xl font-display font-bold mb-3">
+                  {chiefDoctor.name}
+                </h3>
+
+                <p className="text-lg text-muted-foreground mb-2">
+                  {chiefDoctor.specialty}
+                </p>
+
+                <p className="text-sm text-muted-foreground">
+                  Experience: {chiefDoctor.experience}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* ===================== */}
+        {/* OTHER DOCTORS         */}
+        {/* ===================== */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid items-center justify-center md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {doctors.map((doctor, idx) => (
-            <motion.div key={idx} variants={itemVariants} className="group">
-              <div className="relative rounded-2xl overflow-hidden shadow-card">
-                {/* Image */}
-                <div className="relative h-80 overflow-hidden">
-                  <img
-                    src={doctor.image}
-                    alt={doctor.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+          {otherDoctors.map((doctor, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              className="bg-card p-8 rounded-2xl shadow-card hover:shadow-lg transition-shadow"
+            >
+              <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
+                {doctor.experience}
+              </span>
 
-                  {/* Social Links */}
-                  <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <motion.a
-                      href="#"
-                      whileHover={{ scale: 1.1 }}
-                      className="w-10 h-10 rounded-full bg-card/90 backdrop-blur flex items-center justify-center text-foreground hover:text-primary"
-                    >
-                      <Linkedin className="w-5 h-5" />
-                    </motion.a>
-                    <motion.a
-                      href="#"
-                      whileHover={{ scale: 1.1 }}
-                      className="w-10 h-10 rounded-full bg-card/90 backdrop-blur flex items-center justify-center text-foreground hover:text-primary"
-                    >
-                      <Mail className="w-5 h-5" />
-                    </motion.a>
-                  </div>
-                </div>
+              <h3 className="text-xl font-display font-semibold mb-1">
+                {doctor.name}
+              </h3>
 
-                {/* Info */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-primary-foreground">
-                  <span className="inline-block px-3 py-1 rounded-full bg-primary/20 backdrop-blur text-xs font-medium mb-3">
-                    {doctor.experience}
-                  </span>
-                  <h3 className="text-xl font-display font-semibold mb-1">
-                    {doctor.name}
-                  </h3>
-                  <p className="text-sm opacity-80">{doctor.specialty}</p>
-                </div>
-              </div>
+              <p className="text-muted-foreground text-sm">
+                {doctor.specialty}
+              </p>
             </motion.div>
           ))}
         </motion.div>
